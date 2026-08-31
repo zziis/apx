@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>( zono ) | الزاجل الملكي - بوابة الدخول الفاخرة</title>
+  <meta name="description" content="دخولية تطبيق وأيقونة مشروع ( zono ) الملكي - يجمع بين عبق التاريخ وسرعة المستقبل مع صوت الزاجل والتاج الذهبي" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Google Fonts: Cinzel Decorative, Amiri, Cairo, Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Cairo:wght@300;400;600;700;900&family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@500;700;900&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="royal-body">
+  <!-- Background Elements -->
+  <div class="ambient-stars"></div>
+  <canvas id="particleCanvas"></canvas>
+  <div class="light-ray light-ray-left"></div>
+  <div class="light-ray light-ray-right"></div>
+  <div class="royal-vignette"></div>
+
+  <!-- Audio Visualizer Glow Canvas -->
+  <canvas id="audioVisualizer" class="audio-viz-canvas"></canvas>
+
+  <!-- Top Royal Header Navigation Bar -->
+  <header class="royal-header">
+    <div class="header-inner">
+      <div class="brand-badge">
+        <span class="crown-mini">👑</span>
+        <span class="brand-text-sm">( zono )</span>
+      </div>
+      <div class="header-actions">
+        <button id="soundToggleBtn" class="royal-btn-icon" title="صوت الطير والموسيقى الملكية">
+          <span class="icon" id="soundIcon">🔊</span>
+          <span class="btn-text">صوت الزاجل</span>
+          <span class="sound-wave-indicator" id="soundWaves">
+            <i></i><i></i><i></i>
+          </span>
+        </button>
+        <a href="#about-project" class="royal-btn-glass" id="infoNavBtn">عن المشروع</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="main-viewport">
+    
+    <!-- PHASE 1: THE ROYAL SPLASH ENTRANCE (الدخولية الملكية) -->
+    <section id="splashSection" class="splash-section active">
+      <div class="royal-card-container">
+        
+        <!-- 3D Holographic Royal Card -->
+        <div class="royal-3d-card" id="heroCard">
+          
+          <!-- Ornate Filigree Corner Borders -->
+          <div class="filigree-corner top-left"></div>
+          <div class="filigree-corner top-right"></div>
+          <div class="filigree-corner bottom-left"></div>
+          <div class="filigree-corner bottom-right"></div>
+
+          <!-- Glowing Crown Element (تاج ذهبي) -->
+          <div class="crown-wrapper" id="crownElement">
+            <div class="crown-glow"></div>
+            <svg class="crown-svg" viewBox="0 0 100 70" width="85" height="60">
+              <defs>
+                <linearGradient id="crownGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#FFF5C0" />
+                  <stop offset="30%" stop-color="#DFBA5B" />
+                  <stop offset="70%" stop-color="#B38728" />
+                  <stop offset="100%" stop-color="#FDF0A6" />
+                </linearGradient>
+                <filter id="crownShine">
+                  <feGaussianBlur stdDeviation="2" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+              <path d="M10,55 L2,20 L30,35 L50,8 L70,35 L98,20 L90,55 Z" fill="url(#crownGrad)" stroke="#FFEAA7" stroke-width="2" filter="url(#crownShine)"/>
+              <rect x="10" y="52" width="80" height="12" rx="3" fill="url(#crownGrad)" stroke="#AA771C" stroke-width="1.5"/>
+              <circle cx="50" cy="8" r="4.5" fill="#FFFFFF" class="sparkle-gem"/>
+              <circle cx="2" cy="20" r="3.5" fill="#FFFFFF" class="sparkle-gem"/>
+              <circle cx="98" cy="20" r="3.5" fill="#FFFFFF" class="sparkle-gem"/>
+              <circle cx="30" cy="35" r="3" fill="#67E8F9"/>
+              <circle cx="70" cy="35" r="3" fill="#67E8F9"/>
+              <circle cx="30" cy="58" r="2.5" fill="#EF4444"/>
+              <circle cx="50" cy="58" r="3" fill="#3B82F6"/>
+              <circle cx="70" cy="58" r="2.5" fill="#EF4444"/>
+            </svg>
+            <div class="sparkle sparkle-1">✦</div>
+            <div class="sparkle sparkle-2">✦</div>
+          </div>
+
+          <!-- Realistic White Pigeon Showcase Area (طائر الزاجل الأبيض) -->
+          <div class="pigeon-emblem-stage" id="pigeonStage">
+            <div class="pigeon-aura"></div>
+            <div class="pigeon-golden-ring"></div>
+            <div class="pigeon-image-wrapper">
+              <img src="assets/images/icon.jpg" alt="( zono ) White Royal Carrier Pigeon" class="pigeon-img" id="pigeonImg" />
+              <div class="shimmer-overlay"></div>
+            </div>
+            <button class="chirp-trigger-btn" id="chirpBtn" title="انقر لسماع صوت الطير">
+              <span>🕊️ غرد يا زاجل</span>
+            </button>
+          </div>
+
+          <!-- Royal Glowing Name: ( zono ) -->
+          <div class="brand-title-box">
+            <h1 class="royal-title" id="glowingTitle">
+              <span class="bracket-gold">(</span>
+              <span class="text-zono">zono</span>
+              <span class="bracket-gold">)</span>
+            </h1>
+            <div class="title-underline">
+              <span class="line-wing left"></span>
+              <span class="diamond-center">◆</span>
+              <span class="line-wing right"></span>
+            </div>
+          </div>
+
+          <!-- Royal Slogans (بين الحاضر والماضي) -->
+          <div class="tagline-container">
+            <p class="tagline-ar">عراقة الزاجل الملكي وسرعة التكنولوجيا الحديثة</p>
+            <p class="tagline-en">Where Royal Legacy Meets Modern Supremacy</p>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="splash-cta-group">
+            <button class="royal-enter-btn" id="enterAppBtn">
+              <span class="btn-shine"></span>
+              <span class="btn-icon">⚜️</span>
+              <span class="btn-text">دخول التطبيق • Enter Realm</span>
+              <span class="btn-subtext">انقر للاستماع والانتقال</span>
+            </button>
+
+            <div class="quick-audio-bar">
+              <button class="audio-chip-btn" data-sound="warble">
+                <span>🎵 هديل وتغريد</span>
+              </button>
+              <button class="audio-chip-btn" data-sound="wings">
+                <span>🪶 رفرفة الأجنحة</span>
+              </button>
+              <button class="audio-chip-btn" data-sound="royalChime">
+                <span>🔔 الأجراس الملكية</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Bottom Footer Info -->
+          <div class="card-footer-info">
+            <span class="status-indicator"><span class="dot"></span> جاهز للرفع على GitHub</span>
+            <span class="divider">•</span>
+            <span class="version-tag">Royal Edition v1.0</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PHASE 2: MODERN ROYAL APPLICATION PORTAL (لوحة تحكم المشروع) -->
+    <section id="portalSection" class="portal-section">
+      <div class="portal-container">
+        
+        <!-- Portal Header Bar -->
+        <div class="portal-header">
+          <div class="portal-title-block">
+            <div class="portal-crown">👑</div>
+            <div>
+              <h2 class="portal-main-title">مشروع <span class="gold-text">( zono )</span> الملكي</h2>
+              <p class="portal-subtitle">حزمة التصاميم، الأيقونات، دخولية التطبيق، والأصوات التفاعلية</p>
+            </div>
+          </div>
+          <button class="royal-btn-glass" id="backToSplashBtn">
+            <span>↩ العودة للدخولية</span>
+          </button>
+        </div>
+
+        <!-- Grid of Showcase Cards -->
+        <div class="portal-grid">
+          
+          <!-- Card 1: App Icon Presentation -->
+          <div class="portal-card glass-card">
+            <div class="card-badge">الأيقونة الرسمية</div>
+            <div class="icon-preview-box">
+              <img src="assets/images/icon.jpg" alt="Zono Royal App Icon" class="preview-app-icon" />
+              <div class="icon-sizes-chips">
+                <span>512x512 HD</span>
+                <span>iOS / Android</span>
+                <span>Favicon SVG</span>
+              </div>
+            </div>
+            <h3 class="card-title">أيقونة تطبيق ( zono )</h3>
+            <p class="card-desc">أيقونة ملكية ثلاثية الأبعاد تحتوي على زاجل أبيض وتاج ذهبي مع إطار مزخرف واسم مضيء.</p>
+            <div class="card-actions">
+              <a href="assets/images/icon.jpg" download="zono-royal-icon.jpg" class="download-btn">
+                <span>📥 تحميل الأيقونة JPG</span>
+              </a>
+              <a href="assets/images/icon.svg" download="zono-icon.svg" class="download-btn secondary">
+                <span>🎨 تحميل SVG الفيكتور</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2: Cinematic Splash Backdrop -->
+          <div class="portal-card glass-card">
+            <div class="card-badge">خلفية الدخولية الملكية</div>
+            <div class="splash-preview-box">
+              <img src="assets/images/splash-bg.jpg" alt="Zono Royal Backdrop" class="preview-splash-img" />
+            </div>
+            <h3 class="card-title">بانر الدخولية السينمائي</h3>
+            <p class="card-desc">خلفية سينمائية فائقة الدقة تمزج القصر الملكي التاريخي مع الأقواس العصرية والزاجل المحلق.</p>
+            <div class="card-actions">
+              <a href="assets/images/splash-bg.jpg" download="zono-splash-banner.jpg" class="download-btn">
+                <span>📥 تحميل البانر 16:9 4K</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 3: Interactive Royal Sound Studio -->
+          <div class="portal-card glass-card full-span">
+            <div class="card-badge">مختبر أصوات الزاجل الملكي</div>
+            <h3 class="card-title">🔊 مؤثرات صوت الطير ونغمات الدخول التفاعلية</h3>
+            <p class="card-desc">محرك صوتي متطور مدمج بتقنية Web Audio API لتوليد أصوات الطيور الحية والأجراس الملكية بدون الحاجة لملفات خارجية، مع إمكانية تشغيلها في أي تطبيق أو موقع.</p>
+            
+            <div class="sound-pad-grid">
+              <div class="sound-pad-item" onclick="window.ZonoAudio.playBirdSong()">
+                <div class="pad-icon">🕊️</div>
+                <div class="pad-info">
+                  <strong>تغريد الزاجل الأصيل</strong>
+                  <span>نغمات سريعة تحاكي هديل وتغريد الحمام الزاجل</span>
+                </div>
+                <button class="pad-play-btn">▶ تشغيل</button>
+              </div>
+
+              <div class="sound-pad-item" onclick="window.ZonoAudio.playWingFlap()">
+                <div class="pad-icon">🪶</div>
+                <div class="pad-info">
+                  <strong>رفرفة الأجنحة</strong>
+                  <span>صوت انطلاق أجنحة الزاجل الأبيض في الفضاء</span>
+                </div>
+                <button class="pad-play-btn">▶ تشغيل</button>
+              </div>
+
+              <div class="sound-pad-item" onclick="window.ZonoAudio.playRoyalChime()">
+                <div class="pad-icon">⚜️</div>
+                <div class="pad-info">
+                  <strong>رنين الدخول الملكي</strong>
+                  <span>نغمات قيثارة ملكية ذهبية عند تسجيل الدخول</span>
+                </div>
+                <button class="pad-play-btn">▶ تشغيل</button>
+              </div>
+
+              <div class="sound-pad-item" onclick="window.ZonoAudio.playSovereignFanfare()">
+                <div class="pad-icon">👑</div>
+                <div class="pad-info">
+                  <strong>أجراس العرش ( zono )</strong>
+                  <span>هارموني متناغم يجمع صوت الطائر مع الموسيقى</span>
+                </div>
+                <button class="pad-play-btn">▶ تشغيل</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: GitHub Deployment & Code Integration -->
+          <div class="portal-card glass-card full-span" id="about-project">
+            <div class="card-badge">جاهز للنشر على GitHub</div>
+            <h3 class="card-title">🚀 خطوات رفع المشروع وتفعيله على GitHub Pages في دقيقة</h3>
+            
+            <div class="github-guide-steps">
+              <div class="step-box">
+                <div class="step-num">1</div>
+                <div class="step-text">
+                  <strong>إنشاء المستودع (Repository):</strong>
+                  <code>git init &amp;&amp; git add . &amp;&amp; git commit -m "feat: Royal ( zono ) Splash &amp; Icon"</code>
+                </div>
+              </div>
+              <div class="step-box">
+                <div class="step-num">2</div>
+                <div class="step-text">
+                  <strong>الربط مع GitHub:</strong>
+                  <code>git remote add origin https://github.com/USERNAME/zono.git</code>
+                </div>
+              </div>
+              <div class="step-box">
+                <div class="step-num">3</div>
+                <div class="step-text">
+                  <strong>تفعيل GitHub Pages المجاني:</strong>
+                  <span>من إعدادات المستودع (Settings) &gt; Pages &gt; اختر Branch: <code>main</code> لحصولك على رابط موقع فوري!</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Script -->
+  <script src="app.js"></script>
+
+<script>
+(function(){
+  const MAIN="https://zziis.github.io/ZUNO/";
+  function go(){ window.location.href=MAIN; }
+  window.openMainZono=go;
+  document.addEventListener('DOMContentLoaded',function(){
+    const sels=['#enter-btn','#start-btn','.enter-btn','.start-btn','button[data-enter]'];
+    sels.forEach(s=>document.querySelectorAll(s).forEach(b=>b.addEventListener('click',go)));
+    setTimeout(go,4200);
+  });
+})();
+</script>
+
+</body>
+</html>

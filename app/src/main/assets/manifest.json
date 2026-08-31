@@ -1,0 +1,21 @@
+{
+  "name": "( zono ) Royal Messenger",
+  "short_name": "zono",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#05070d",
+  "theme_color": "#dfba5b",
+  "description": "The Sovereign Royal Messenger Application (zono) - Blending Royal Legacy with Modern Power.",
+  "icons": [
+    {
+      "src": "assets/images/icon.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "assets/images/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

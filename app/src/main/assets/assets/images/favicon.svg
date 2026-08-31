@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#151b2b"/>
+      <stop offset="60%" stop-color="#080c14"/>
+      <stop offset="100%" stop-color="#030508"/>
+    </radialGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF3C4"/>
+      <stop offset="25%" stop-color="#DFBA5B"/>
+      <stop offset="50%" stop-color="#FDF0A6"/>
+      <stop offset="75%" stop-color="#B38728"/>
+      <stop offset="100%" stop-color="#F6E27A"/>
+    </linearGradient>
+    <linearGradient id="goldBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFEAA7"/>
+      <stop offset="30%" stop-color="#D4AF37"/>
+      <stop offset="70%" stop-color="#AA771C"/>
+      <stop offset="100%" stop-color="#FDF0A6"/>
+    </linearGradient>
+    <linearGradient id="pigeonWing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="50%" stop-color="#F0F4F8"/>
+      <stop offset="100%" stop-color="#D8E2EC"/>
+    </linearGradient>
+    <filter id="goldGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur1"/>
+      <feGaussianBlur stdDeviation="18" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="pigeonGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0.9  0 1 0 0 0.8  0 0 1 0 0.5  0 0 0 0.5 0"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="512" height="512" rx="115" fill="url(#bgGrad)"/>
+  <rect x="24" y="24" width="464" height="464" rx="95" fill="none" stroke="url(#goldBorder)" stroke-width="5" stroke-dasharray="12 4" opacity="0.6"/>
+  <rect x="36" y="36" width="440" height="440" rx="83" fill="none" stroke="url(#goldGrad)" stroke-width="2.5" opacity="0.85"/>
+  <circle cx="256" cy="220" r="145" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.3" stroke-dasharray="6 6"/>
+  <circle cx="256" cy="220" r="160" fill="none" stroke="url(#goldGrad)" stroke-width="1" opacity="0.15"/>
+  <g transform="translate(256, 110) scale(0.95)" filter="url(#goldGlow)">
+    <path d="M -55 35 L -65 -15 L -28 10 L 0 -35 L 28 10 L 65 -15 L 55 35 Z" fill="url(#goldGrad)" stroke="#FFEAA7" stroke-width="2"/>
+    <rect x="-55" y="32" width="110" height="14" rx="4" fill="url(#goldGrad)" stroke="#AA771C" stroke-width="1.5"/>
+    <circle cx="0" cy="-35" r="5" fill="#FFF" stroke="url(#goldGrad)" stroke-width="2"/>
+    <circle cx="-65" cy="-15" r="4.5" fill="#FFF" stroke="url(#goldGrad)" stroke-width="1.5"/>
+    <circle cx="65" cy="-15" r="4.5" fill="#FFF" stroke="url(#goldGrad)" stroke-width="1.5"/>
+    <circle cx="-28" cy="10" r="3.5" fill="#5CE1E6"/>
+    <circle cx="28" cy="10" r="3.5" fill="#5CE1E6"/>
+    <circle cx="-35" cy="39" r="3" fill="#E02424"/>
+    <circle cx="0" cy="39" r="3.5" fill="#3B82F6"/>
+    <circle cx="35" cy="39" r="3" fill="#E02424"/>
+  </g>
+  <g filter="url(#pigeonGlow)">
+    <path d="M 256 240 C 190 170, 110 160, 90 200 C 130 250, 200 260, 256 275 C 312 260, 382 250, 422 200 C 402 160, 322 170, 256 240 Z" fill="url(#goldGrad)" opacity="0.35"/>
+    <path d="M 250 230 C 190 160, 110 150, 90 190 C 85 200, 105 210, 120 205 C 100 215, 115 230, 135 225 C 120 238, 140 250, 165 242 C 185 255, 215 250, 250 240 Z" fill="url(#pigeonWing)" stroke="#D8E2EC" stroke-width="1.5"/>
+    <path d="M 262 230 C 322 160, 402 150, 422 190 C 427 200, 407 210, 392 205 C 412 215, 397 230, 377 225 C 392 238, 372 250, 347 242 C 327 255, 297 250, 262 240 Z" fill="url(#pigeonWing)" stroke="#D8E2EC" stroke-width="1.5"/>
+    <path d="M 238 270 L 220 320 C 235 325, 256 328, 256 328 C 256 328, 277 325, 292 320 L 274 270 Z" fill="url(#pigeonWing)" stroke="#CBD5E1" stroke-width="1.5"/>
+    <ellipse cx="256" cy="235" rx="34" ry="46" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
+    <circle cx="256" cy="180" r="22" fill="#FFFFFF"/>
+    <path d="M 256 182 L 256 194 L 263 186 Z" fill="#DFBA5B"/>
+    <rect x="250" y="190" width="16" height="6" rx="2" fill="url(#goldGrad)" stroke="#AA771C" stroke-width="0.8"/>
+    <circle cx="251" cy="177" r="3.5" fill="#1E293B"/>
+    <circle cx="250" cy="176" r="1.2" fill="#FFFFFF"/>
+    <circle cx="261" cy="177" r="3.5" fill="#1E293B"/>
+    <circle cx="262" cy="176" r="1.2" fill="#FFFFFF"/>
+  </g>
+  <g filter="url(#goldGlow)">
+    <text x="256" y="415" font-family="'Cinzel', 'Playfair Display', serif" font-size="56" font-weight="900" text-anchor="middle" fill="url(#goldGrad)" letter-spacing="6">
+      ( zono )
+    </text>
+  </g>
+  <text x="256" y="450" font-family="'Montserrat', sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#FFEAA7" opacity="0.85" letter-spacing="3">
+    ROYAL MESSENGER
+  </text>
+</svg>
